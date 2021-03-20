@@ -37,7 +37,7 @@ const stats =
 };
 ```
 
-Check test/index.spec.js for an example of usage.
+Example of usage:
 
 ```js
     const CounterFacade = require('./src');
@@ -51,7 +51,7 @@ Check test/index.spec.js for an example of usage.
         spoiled: 50
     };
 
-    console.log(counter.valid(stats));   // 80 %
-    console.log(counter.blank(stats));   // 15 %
-    console.log(counter.spoiled(stats)); // 5 %
+    console.log(counter.valid(stats));   // Should print 80 %
+    console.log(counter.blank(stats));   // Should print 15 %
+    console.log(counter.spoiled(stats)); // Should print 5 %
 ```
