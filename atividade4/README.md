@@ -2,6 +2,15 @@
 
 This project calculates the sum of all multiples of 3 and 5 up until a limit.
 
+
+## Installation
+
+In order to execute tests and check code coverage, run the following installation script:
+
+```sh
+    yarn install
+```
+
 ## Testing
 
 To run unit tests, run the following command in the terminal:
