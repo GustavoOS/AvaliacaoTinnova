@@ -34,7 +34,24 @@ const stats =
     valid: 800,
     blank: 150,
     spoiled: 50
-}
+};
 ```
 
 Check test/index.spec.js for an example of usage.
+
+```js
+    const CounterFacade = require('./src');
+
+    const counter = new CounterFacade();
+    const stats =
+    {
+        total: 1000,
+        valid: 800,
+        blank: 150,
+        spoiled: 50
+    };
+
+    console.log(counter.valid(stats));   // 80 %
+    console.log(counter.blank(stats));   // 15 %
+    console.log(counter.spoiled(stats)); // 5 %
+```

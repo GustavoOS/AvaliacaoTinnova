@@ -27,4 +27,12 @@ Also, to see Test Coverage, run the following command:
 ## Usage
 
 In order to use Bubble sort, import it from index.js and pass an array as a parameter.
-Check index.spec.js for futher usage examples.
+Check sort.spec.js for futher usage examples.
+
+```js
+    const bubbleSort = require("./src");
+    const arr = [5, 2, 1];
+    bubbleSort(arr);
+
+    console.log(arr); // Should print [1, 2, 5]
+```

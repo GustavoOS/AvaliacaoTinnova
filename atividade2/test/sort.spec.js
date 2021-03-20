@@ -33,6 +33,20 @@ test('Test sort with a reverse sorted array', () =>{
     assertElementEqualIndex(arr);
 })
 
+/*
+    GIVEN [5, 2, 1] as an array
+    WHEN calling bubble sort function
+    THEN [1, 2, 5] should be the result
+*/
+test('Test sort with a 3 element array', () => {
+    const arr = [5, 2, 1];
+    bubbleSort(arr);
+    expect(arr[0]).toBe(1);
+    expect(arr[1]).toBe(2);
+    expect(arr[2]).toBe(5);
+})
+
+
 function assertElementEqualIndex(arr) {
     for (const [index, value] of arr.entries())
         expect(value).toBe(index);

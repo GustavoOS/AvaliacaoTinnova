@@ -28,3 +28,11 @@ Also, to see Test Coverage, run the following command:
 
 In order to use the factorial calculator, import the factorial function from index.js and pass a number as parameter.
 Check factorial.spec.js for futher usage examples.
+
+
+```js
+    const factorial = require("./src");
+
+    console.log(factorial(6)); // Should print 720
+
+```
