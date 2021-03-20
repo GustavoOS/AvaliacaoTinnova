@@ -1,4 +1,4 @@
-const Counter = require("./counter");
+const Counter = require("./");
 
 class ValidCounter extends Counter {
     count(stats) {
