@@ -6,5 +6,24 @@ const virtus = {
     sold: false
 };
 
+export class MockResponse{
+    public httpStatus: number = null;
+    public sent: boolean = false;
+    public body: any;
+
+    status(c) {
+        this.httpStatus = c;
+        return this;
+    };
+
+    send() {
+        this.sent = true;
+    };
+
+    json(b) {
+        this.body = b;
+        return this;
+    }
+}
 
 export {virtus};
