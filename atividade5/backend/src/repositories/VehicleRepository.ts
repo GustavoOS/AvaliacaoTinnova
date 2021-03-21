@@ -8,6 +8,8 @@ export interface VehicleRepository {
     save(vehicle: Vehicle) : Promise<void>;
     update(id: string, updated: Vehicle) : Promise<void>;
 
+    list(): Promise<Vehicle[]>;
+
     // countByDecade() : Promise<Record<number, number>>;
     // countByBrand() : Promise<Record<string, number>>;
     // countLastWeek() : Promise<number>;

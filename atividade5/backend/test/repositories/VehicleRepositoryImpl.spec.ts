@@ -62,6 +62,11 @@ describe("Test Vehicle Repository", () => {
         expect(repository.vehicles.length).toBe(1);
     });
 
+    test("List", async ()=>{
+        const list = await repository.list();
+        expect(list).toBe(repository.vehicles);
+    });
+
     async function assertTypoBrand(brand: string) {
         expect(await repository.brandExists("Forde")).toBeFalsy();
     }

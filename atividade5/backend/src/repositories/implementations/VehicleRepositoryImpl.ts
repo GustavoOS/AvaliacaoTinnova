@@ -4,7 +4,7 @@ import { VehicleRepository } from "../VehicleRepository";
 export class VehicleRepositoryImpl implements VehicleRepository {
 
     private brands = ['Volkswagen', 'Ford', 'Chevrolet', 'Fiat'];
-    vehicles: Vehicle [] = [];
+    vehicles: Vehicle[] = [];
 
     async brandExists(brand: string): Promise<boolean> {
         return this.brands.indexOf(brand) >= 0;
@@ -19,12 +19,16 @@ export class VehicleRepositoryImpl implements VehicleRepository {
     }
 
     async delete(id: string): Promise<void> {
-        this.vehicles = this.vehicles.filter(v=>v.id !== id);
+        this.vehicles = this.vehicles.filter(v => v.id !== id);
     }
 
     async update(id: string, updated: Vehicle): Promise<void> {
-        let index = this.vehicles.findIndex(v=>v.id === id);
+        let index = this.vehicles.findIndex(v => v.id === id);
         this.vehicles[index] = updated;
+    }
+
+    async list(): Promise<Vehicle[]> {
+        return this.vehicles;
     }
 
     // countByDecade(): Promise<Record<number, number>> {
