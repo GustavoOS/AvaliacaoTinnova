@@ -9,8 +9,4 @@ export interface VehicleRepository {
     update(id: string, updated: Vehicle) : Promise<void>;
 
     list(): Promise<Vehicle[]>;
-
-    // countByDecade() : Promise<Record<number, number>>;
-    // countByBrand() : Promise<Record<string, number>>;
-    // countLastWeek() : Promise<number>;
 }

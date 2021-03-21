@@ -30,15 +30,4 @@ export class VehicleRepositoryImpl implements VehicleRepository {
     async list(): Promise<Vehicle[]> {
         return this.vehicles;
     }
-
-    // countByDecade(): Promise<Record<number, number>> {
-    //     throw new Error("Method not implemented.");
-    // }
-    // countByBrand(): Promise<Record<string, number>> {
-    //     throw new Error("Method not implemented.");
-    // }
-    // countLastWeek(): Promise<number> {
-    //     throw new Error("Method not implemented.");
-    // }
-
 }

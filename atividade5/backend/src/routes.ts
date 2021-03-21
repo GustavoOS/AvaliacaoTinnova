@@ -1,6 +1,7 @@
 import Router from "express";
 import { createVehicleController } from "./useCases/createVehicle";
 import { deleteVehicleController } from "./useCases/deleteVehicle";
+import { findVehiclesController } from "./useCases/FindVehicles";
 import { listVehiclesController } from "./useCases/listVehicles";
 import { seeVehicleController } from "./useCases/SeeVehicle";
 import { updateVehicleController } from "./useCases/UpdateVehicle";
@@ -12,6 +13,9 @@ router.post("/veiculos", (req, res) =>
 
 router.delete("/veiculos/:id", (req, res) =>
     deleteVehicleController.handle(req, res));
+
+router.get("/veiculos/find", (req, res) =>
+    findVehiclesController.handle(req, res));
 
 router.get("/veiculos/:id", (req, res) =>
     seeVehicleController.handle(req, res));
