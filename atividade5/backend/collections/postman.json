@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "9c99ec50-5553-40b2-b048-6004d0761280",
+		"name": "Cadastro de veículos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{baseURL}/veiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos"
+					]
+				},
+				"description": "Retorna todos os veículos"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos/find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos/find",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos",
+						"find"
+					]
+				},
+				"description": "Retorna os veículos de acordo com o termo passado parâmetro q"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos/find",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos",
+								"find"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos/{{id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos",
+						"{{id}}"
+					]
+				},
+				"description": "Retorna os detalhes do veículo"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos/{id}",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let {id} = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"id\", id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"virtus\",\r\n    \"brand\": \"Volkswagen\",\r\n    \"year\": 2020,\r\n    \"description\": \"prata\",\r\n    \"sold\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos"
+					]
+				},
+				"description": "Adiciona um novo veículo"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/veiculos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"gol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos/{{id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos",
+						"{{id}}"
+					]
+				},
+				"description": "Atualiza os dados de um veículo"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos/{id}",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos/{id}",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos/{{id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos",
+						"{{id}}"
+					]
+				},
+				"description": "Atualiza apenas alguns dados do veículo"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos/{id}",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "{baseURL}/veiculos/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/veiculos/{{id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"veiculos",
+						"{{id}}"
+					]
+				},
+				"description": "Apaga o veículo"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{baseURL}/veiculos/{id}",
+							"host": [
+								"{baseURL}"
+							],
+							"path": [
+								"veiculos",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
