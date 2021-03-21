@@ -24,15 +24,41 @@ describe("Test Vehicle Repository", () => {
     });
 
     test("Add new vehicle", async () => {
-        const vehicle = new Vehicle(virtus);
-        await repository.save(vehicle);
+        const vehicle = await addVirtus();
         expect(repository.vehicles[0]).toBe(vehicle);
         expect(repository.vehicles[0].createdAt
             .getDay()).toBe((new Date()).getDay());
     });
 
+    test("find by id", async ()=>{
+        const v: Vehicle = await addVirtus();
+        const v1: Vehicle = await repository.findById(v.id);
+        expect(v1).not.toBeNull();
+        expect(v1.id).toBe(v.id);
+    });
+
+    test("Delete vehicle", async() =>{
+        const v = await addVirtus();
+        const gol = new Vehicle(virtus);
+        gol.name = "gol";
+        expect(v.id).not.toBe(gol.id);
+        await repository.save(gol);
+        expect(repository.vehicles[1].name).toBe("gol");
+        await repository.delete(gol.id);
+        expect(repository.vehicles.length).toBe(1);
+        expect(repository.vehicles[0].id).toBe(v.id);
+    });
+
     async function assertTypoBrand(brand: string) {
         expect(await repository.brandExists("Forde")).toBeFalsy();
     }
+
+    async function addVirtus() {
+        const vehicle = new Vehicle(virtus);
+        await repository.save(vehicle);
+        return vehicle;
+    }
 });
+
+
 

@@ -10,12 +10,16 @@ export class VehicleRepositoryImpl implements VehicleRepository {
         return this.brands.indexOf(brand) >= 0;
     }
 
-    findById(id: string): Promise<Vehicle> {
-        throw new Error("Method not implemented.");
+    async findById(id: string): Promise<Vehicle> {
+        return this.vehicles.find((v) => v.id === id);
     }
 
     async save(vehicle: Vehicle): Promise<void> {
         this.vehicles.push(vehicle);
+    }
+
+    async delete(id: string): Promise<void> {
+        this.vehicles = this.vehicles.filter(v=>v.id !== id);
     }
 
     update(vehicle: Vehicle): Promise<void> {

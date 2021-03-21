@@ -8,11 +8,17 @@ export class CreateVehicleController {
         const { name, brand, sold, description, year } = request.body;
 
         try {
-            await this.useCase.execute({ name, brand, sold, description, year });
-            return response.status(201).send();
+            const id = await this.useCase.execute({
+                name,
+                brand,
+                sold,
+                description,
+                year
+            });
+            return response.status(201).json({id}).send();
         } catch (err) {
             return response.status(400).json(
-                { message: err.message || 'Unexpected error.' });
+                { message: err.message || 'Unexpected error.' }).send();
         }
 
     }

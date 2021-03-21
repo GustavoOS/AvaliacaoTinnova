@@ -60,6 +60,7 @@ describe("Check Controller", () => {
         await controller.handle(mockRequest, mockResponse);
         expect(mockResponseProto.httpStatus).toBe(201);
         expect(mockResponseProto.sent).toBeTruthy();
+        expect(mockResponseProto.body.id).not.toBeNull();
     });
 
     test("Brand typo scenario", async ()=>{
