@@ -22,17 +22,19 @@ export class VehicleRepositoryImpl implements VehicleRepository {
         this.vehicles = this.vehicles.filter(v=>v.id !== id);
     }
 
-    update(vehicle: Vehicle): Promise<void> {
-        throw new Error("Method not implemented.");
+    async update(id: string, updated: Vehicle): Promise<void> {
+        let index = this.vehicles.findIndex(v=>v.id === id);
+        this.vehicles[index] = updated;
     }
-    countByDecade(): Promise<Record<number, number>> {
-        throw new Error("Method not implemented.");
-    }
-    countByBrand(): Promise<Record<string, number>> {
-        throw new Error("Method not implemented.");
-    }
-    countLastWeek(): Promise<number> {
-        throw new Error("Method not implemented.");
-    }
+
+    // countByDecade(): Promise<Record<number, number>> {
+    //     throw new Error("Method not implemented.");
+    // }
+    // countByBrand(): Promise<Record<string, number>> {
+    //     throw new Error("Method not implemented.");
+    // }
+    // countLastWeek(): Promise<number> {
+    //     throw new Error("Method not implemented.");
+    // }
 
 }

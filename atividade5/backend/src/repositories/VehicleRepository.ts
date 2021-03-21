@@ -6,9 +6,9 @@ export interface VehicleRepository {
     findById(id: string) : Promise<Vehicle>;
     delete(id:string) :Promise<void>;
     save(vehicle: Vehicle) : Promise<void>;
-    update(vehicle: Vehicle) : Promise<void>;
+    update(id: string, updated: Vehicle) : Promise<void>;
 
-    countByDecade() : Promise<Record<number, number>>;
-    countByBrand() : Promise<Record<string, number>>;
-    countLastWeek() : Promise<number>;
+    // countByDecade() : Promise<Record<number, number>>;
+    // countByBrand() : Promise<Record<string, number>>;
+    // countLastWeek() : Promise<number>;
 }
