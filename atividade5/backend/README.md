@@ -30,3 +30,7 @@ To start the server, run the command after installation:
 ```sh
     yarn start
 ```
+
+## Collections
+
+There is a Postman collection in the Collections directory, with the requisitions prepared to use the software. Import it in Postman.
